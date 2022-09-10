@@ -61,6 +61,6 @@
 
   defineProps({
     communities: Object
-})
+    })
 
   </script>
