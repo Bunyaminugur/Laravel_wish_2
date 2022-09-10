@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CommunityStoreRequest;
 use App\Models\Community;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Route;
 use Inertia\Inertia;
 
 class CommunityController extends Controller
@@ -16,7 +17,9 @@ class CommunityController extends Controller
      */
     public function index()
     {
-        return 'Succes';
+        $communities = Community::all();
+
+        return Inertia::render('Communities/Index', compact('communities'));
     }
 
     /**
