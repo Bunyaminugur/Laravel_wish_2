@@ -20,12 +20,6 @@
                     <InputError class="mt-2" :message="form.errors.name" />
                 </div>
 
-                <div>
-                    <InputLabel for="slug" value="Slug" />
-                    <TextInput id="slug" type="text" class="mt-1 block w-full" v-model="form.slug" autocomplete="slug" />
-                    <InputError class="mt-2" :message="form.errors.slug" />
-                </div>
-
                 <div class="mt-4">
                     <InputLabel for="description" value="Description" />
                     <TextInput id="description" type="text" class="mt-1 block w-full" v-model="form.description" autocomplete="description" />
@@ -56,14 +50,17 @@ import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { Head, useForm } from '@inertiajs/inertia-vue3';
 
-const form = useForm({
-    name: '',
-    description: '',
-    slug: '',
-});
+    defineProps({
+        errors: Object,
+    });
 
+    const form = useForm({
+        name: "",
+        description: "",
+        slug: "",
+    });
 
-const submit = () => {
-    form.post(route('communities.store'));
-};
+    const submit = () => {
+        form.post(route("communities.store"));
+    };
 </script>
