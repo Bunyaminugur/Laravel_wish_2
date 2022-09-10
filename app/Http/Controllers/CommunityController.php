@@ -42,7 +42,7 @@ class CommunityController extends Controller
     {
         Community::create($request->validated() + ['user_id' => auth()->id()]);
 
-        return to_route('communities.index');
+        return to_route('communities.index')->with('message', 'Community created succesfully.');
     }
 
     /**
