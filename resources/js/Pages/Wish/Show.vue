@@ -1,11 +1,18 @@
 <template>
-    <h1>Hi {{ wish.name }} Hi</h1>
+    <guest-layout><div class="flex justify-end m-2 p-2">
+        <Link v-if="$page.props.auth.auth_check" :href="route('communities.posts.create', community.slug)" class="px-3 py-4 rounded bg-indigo-200">Create Post</Link>
+    </div>
+        <h1>Community {{ community.name }} Hi</h1>
+    </guest-layout>
+
 </template>
 
 <script setup>
+import GuestLayout from '@/Layouts/GuestLayout.vue';
+import { Link } from '@inertiajs/inertia-vue3';
 
 defineProps({
-    wish: Object(),
+    community: Object(),
 })
 
 </script>

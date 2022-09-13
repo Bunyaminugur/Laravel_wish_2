@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\CommunityController;
-use App\Http\Controllers\WishController;
-use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Application;
+use App\Http\Controllers\WishController;
+use App\Http\Controllers\CommunityController;
+use App\Http\Controllers\CommunityPostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,7 @@ Route::group(['middleware' => ['auth', 'verified']], function(){
     })->name('dashboard');
 
     Route::resource('/dashboard/communities', CommunityController::class);
+    Route::resource('/dashboard/communities.posts', CommunityPostController::class);
 });
 
 require __DIR__.'/auth.php';

@@ -10,8 +10,8 @@ class WishController extends Controller
 {
     public function show($slug)
     {
-        $wish = Community::where('slug', $slug)->first();
+        $community = Community::where('slug', $slug)->first();
 
-        return Inertia::render('Wish/Show', compact('wish'));
+        return Inertia::render('Wish/Show', compact('community'));
     }
 }
