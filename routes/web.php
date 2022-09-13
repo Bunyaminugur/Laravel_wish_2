@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CommunityController;
+use App\Http\Controllers\WishController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -25,13 +26,14 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/w/{slug}', [WishController::class, 'show'])->name('wish.show');
 
 Route::group(['middleware' => ['auth', 'verified']], function(){
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');
 
-    Route::resource('/communities', CommunityController::class);
+    Route::resource('/dashboard/communities', CommunityController::class);
 });
 
 require __DIR__.'/auth.php';
