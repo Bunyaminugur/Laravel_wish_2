@@ -16,7 +16,7 @@
 
                   <div>
                       <InputLabel for="title" value="Title" />
-                      <TextInput id="title" type="text" class="mt-1 block w-full" v-model="form.title" autofocus autocomplete="name" />
+                      <TextInput id="title" type="text" class="mt-1 block w-full" v-model="form.title" autofocus autocomplete="title" />
                       <InputError class="mt-2" :message="form.errors.title" />
                   </div>
 
