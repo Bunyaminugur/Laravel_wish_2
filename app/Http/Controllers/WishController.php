@@ -13,7 +13,7 @@ class WishController extends Controller
     {
         $community = Community::where('slug', $slug)->first();
 
-        $posts = CommunityPostResource::collection($community->posts()->paginate(12));
+        $posts = CommunityPostResource::collection($community->posts()->with('user')->paginate(3));
 
         return Inertia::render('Wish/Show', compact('community', 'posts'));
     }
