@@ -9,7 +9,6 @@
         rounded-lg
         border border-gray-200
         shadow-md
-        dark:bg-gray-300 dark:border-gray-300
       ">
       <div class="mr-3">upvote</div>
       <div>
