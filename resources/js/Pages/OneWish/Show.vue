@@ -10,18 +10,18 @@
                     </h2>
                 </div>
                 <div class="m-2 p-6 bg-white text-sm text-gray-400 rounded-xl">
-                    <div class="flex flex-col md:flex-row justify-between">
+                    <div class="flex flex-col md:flex-row justify-between m-2">
                         <div>
                             Posted by
-                            <span class="ml-2 text-gray-900">{{ post.data.username }}</span>
+                            <span class="ml-1 text-gray-900">{{ post.data.username }}</span>
                         </div>
-                        <div>
-                            <Link class="font-semibold text-indigo-700" :href="route('communities.posts.edit', [community.slug, post.data.slug])">Edit</Link>
-                            <Link class="font-semibold text-red-500 ml-2" :href="route('communities.posts.edit', [community.slug, post.data.slug])">Delete</Link>
+                        <div v-if="$page.props.auth.auth_check">
+                            <Link class="font-semibold bg-indigo-700 hover:bg-indigo-500 rounded-md text-white px-4 py-2" :href="route('communities.posts.edit', [community.slug, post.data.slug])">Edit</Link>
+                            <Link class="font-semibold bg-red-500 ml-2 hover:bg-red-400 rounded-md text-white px-4 py-2" :href="route('communities.posts.edit', [community.slug, post.data.slug])">Delete</Link>
                         </div>
                     </div>
                     <h1 class="mt-2 font-semibold text-2xl text-gray-900">{{ post.data.title }}</h1>
-                    <p class="mt-2 text-gray-900">{{ post.data.description }}</p>
+                    <p class="mt-2 text-gray-900 mb-2">{{ post.data.description }}</p>
                     <a :href="post.data.url" class="font-semibold text-indigo-700 text-sm" >{{ post.data.url }}</a>
                 </div>
             </div>
