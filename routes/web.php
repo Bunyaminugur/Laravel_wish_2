@@ -6,6 +6,7 @@ use Illuminate\Foundation\Application;
 use App\Http\Controllers\WishController;
 use App\Http\Controllers\CommunityController;
 use App\Http\Controllers\CommunityPostController;
+use App\Http\Controllers\PostCommentController;
 use App\Http\Controllers\PostController;
 
 /*
@@ -30,6 +31,7 @@ Route::get('/', function () {
 
 Route::get('/w/{slug}', [WishController::class, 'show'])->name('wish.show');
 Route::get('/w/{community_slug}/posts/{post:slug}', [PostController::class, 'show'])->name('onewish.show');
+Route::post('/w/{community_slug}/posts/{post:slug}/comments', [PostCommentController::class, 'store'])->name('wish.comments');
 
 Route::group(['middleware' => ['auth', 'verified']], function(){
     Route::get('/dashboard', function () {
