@@ -17,7 +17,7 @@
                         </div>
                         <div v-if="$page.props.auth.auth_check">
                             <Link class="font-semibold bg-indigo-700 hover:bg-indigo-500 rounded-md text-white px-4 py-2" :href="route('communities.posts.edit', [community.slug, post.data.slug])">Edit</Link>
-                            <Link class="font-semibold bg-red-500 ml-2 hover:bg-red-300 rounded-md text-white px-4 py-2" :href="route('communities.posts.edit', [community.slug, post.data.slug])">Delete</Link>
+                            <Link class="font-semibold bg-red-500 ml-2 hover:bg-red-400 rounded-md text-white px-4 py-2" :href="route('communities.posts.edit', [community.slug, post.data.slug])">Delete</Link>
                         </div>
                     </div>
                     <h1 class="mt-2 font-semibold text-2xl text-gray-900">{{ post.data.title }}</h1>
