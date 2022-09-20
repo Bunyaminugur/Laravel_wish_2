@@ -15,9 +15,9 @@
                             Posted by
                             <span class="ml-1 text-gray-900">{{ post.data.username }}</span>
                         </div>
-                        <div v-if="$page.props.auth.auth_check">
+                        <div v-if="$page.props.auth.auth_check && post.data.owner">
                             <Link class="font-semibold bg-indigo-700 hover:bg-indigo-500 rounded-md text-white px-4 py-2" :href="route('communities.posts.edit', [community.slug, post.data.slug])">Edit</Link>
-                            <Link class="font-semibold bg-red-500 ml-2 hover:bg-red-400 rounded-md text-white px-4 py-2" :href="route('communities.posts.edit', [community.slug, post.data.slug])">Delete</Link>
+                            <Link class="font-semibold bg-red-500 ml-2 hover:bg-red-400 rounded-md text-white px-4 py-2" method="delete" as="button" type="button" :href="route('communities.posts.destroy', [community.slug, post.data.slug])">Delete</Link>
                         </div>
                     </div>
                     <h1 class="mt-2 font-semibold text-2xl text-gray-900">{{ post.data.title }}</h1>
