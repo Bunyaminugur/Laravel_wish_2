@@ -9,8 +9,13 @@
                         </Link>
                     </h2>
                 </div>
-                <div class="m-2 p-6 bg-white text-sm text-gray-400 rounded-xl">
-                    <div class="flex ml-4 flex-col md:flex-row justify-between m-2">
+                <div class="flex m-2 p-6 bg-white text-sm text-gray-400 rounded-xl">
+                    <div class="bg-gray-300 text-black">
+                        <!-- work in progress -->
+                        <!-- <PostVote :post="post.data" /> -->
+                    </div>
+                    <div class="w-full">
+                        <div class="flex ml-4 flex-col md:flex-row justify-between m-2">
                         <div>
                             Posted by
                             <span class="ml-1 text-gray-900">{{ post.data.username }}</span>
@@ -45,6 +50,7 @@
                             </div>
                         </form>
                     </div>
+                    </div>
                 </div>
             </div>
             <div class="w-full md:w-4/12 p-3">
@@ -59,6 +65,7 @@
 <script setup>
 import GuestLayout from '@/Layouts/GuestLayout.vue';
 import { Link, useForm, methods } from '@inertiajs/inertia-vue3';
+import PostVote from '@/Components/PostVote.vue';
 
     const props = defineProps({
         community: Object,
@@ -71,7 +78,6 @@ import { Link, useForm, methods } from '@inertiajs/inertia-vue3';
 
     const submit = () => {
         form.post(route("wish.comments", [props.community.slug, props.post.data.slug])), {
-            // onSuccess: () => form.content('content')
             this:form.content = null,
         };
     };
