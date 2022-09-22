@@ -9,9 +9,10 @@
         rounded-lg
         border border-gray-200
         shadow-md
-        dark:bg-gray-300 dark:border-gray-300
       ">
-      <div class="mr-3">upvote</div>
+      <div class="mr-3">
+        <PostVote :post="post"/>
+      </div>
       <div>
         <div class="flex m-2 p-2">
           <span class="font-semibold mr-3">w/{{ community }}</span>
@@ -40,7 +41,11 @@
         <div class="flex m-2 p-2">
           <p class="mr-4 p-2">Comments(2)</p>
           <Link
+<<<<<<< HEAD
             :href="route('communities.posts.show', [community, post.slug])" 
+=======
+            :href="route('onewish.show', [community, post.slug])"
+>>>>>>> 43034bf505dfdd3136d0c335d7254424a17c5986
             class="
               inline-flex
               items-center
@@ -54,8 +59,7 @@
               hover:bg-blue-800
               focus:ring-4 focus:outline-none focus:ring-blue-300
               dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800
-            "
-          >
+            ">
             Read more
             <svg
               aria-hidden="true"
@@ -76,7 +80,12 @@
     </div>
   </template>
 <script setup>
+<<<<<<< HEAD
 import { Link } from "@inertiajs/inertia-vue3"
+=======
+import { Link } from "@inertiajs/inertia-vue3";
+import PostVote from "./PostVote.vue";
+>>>>>>> 43034bf505dfdd3136d0c335d7254424a17c5986
   defineProps({
     post: Object,
     community: String,

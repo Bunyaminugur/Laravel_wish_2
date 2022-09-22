@@ -17,7 +17,7 @@ class Post extends Model
         'slug',
         'description',
         'url',
-        'votes'
+        'votes',
       ];
 
       public function sluggable(): array
@@ -29,8 +29,28 @@ class Post extends Model
         ];
     }
 
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function community()
+    {
+        return $this->belongsTo(Community::class);
+    }
+
+    public function postVotes()
+    {
+        return $this->hasMany(PostVote::class);
     }
 }
