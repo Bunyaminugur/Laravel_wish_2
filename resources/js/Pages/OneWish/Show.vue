@@ -19,6 +19,7 @@
                         <div>
                             Posted by
                             <span class="ml-1 text-gray-900">{{ post.data.username }}</span>
+                            {{ post.data.created_at }}
                         </div>
                         <div v-if="$page.props.auth.auth_check && post.data.owner">
                             <Link class="font-semibold bg-indigo-700 hover:bg-indigo-500 rounded-md text-white px-4 py-2" :href="route('communities.posts.edit', [community.slug, post.data.slug])">Edit</Link>
@@ -66,6 +67,7 @@
 import GuestLayout from '@/Layouts/GuestLayout.vue';
 import { Link, useForm, methods } from '@inertiajs/inertia-vue3';
 import PostList from '@/Components/PostList.vue';
+import PostVote from '@/Components/PostVote.vue';
 
     const props = defineProps({
         community: Object,

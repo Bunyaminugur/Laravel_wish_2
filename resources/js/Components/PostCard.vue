@@ -14,11 +14,12 @@
         <PostVote :post="post"/>
       </div>
       <div>
-        <div class="flex m-2 p-2">
+        <div class="flex my-2 py-2 text-sm">
           <Link :href="route('wish.show', community)" class="font-semibold mr-3 hover:text-amber-600">w/{{ community }}</Link>
           <div class="flex">
             Posted by
-            <span class="font-semibold ml-1">{{ post.username }}</span>
+            <span class="font-semibold mx-1">{{ post.username }}</span>
+            {{ post.created_at }}
           </div>
         </div>
         <Link :href="route('onewish.show', [community, post.slug])">
