@@ -43,7 +43,11 @@
         <div class="flex m-2 p-2">
           <p class="mr-4 p-2">Comments({{ post.comments_count }})</p>
           <Link
+<<<<<<< HEAD
+            :href="route('communities.posts.show', [community, post.slug])" 
+=======
             :href="route('onewish.show', [community, post.slug])"
+>>>>>>> 43034bf505dfdd3136d0c335d7254424a17c5986
             class="
               inline-flex
               items-center
@@ -78,8 +82,12 @@
     </div>
   </template>
 <script setup>
+<<<<<<< HEAD
+import { Link } from "@inertiajs/inertia-vue3"
+=======
 import { Link } from "@inertiajs/inertia-vue3";
 import PostVote from "./PostVote.vue";
+>>>>>>> 43034bf505dfdd3136d0c335d7254424a17c5986
   defineProps({
     post: Object,
     community: String,

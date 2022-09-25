@@ -11,6 +11,7 @@ use App\Http\Resources\PostShowResource;
 
 class PostController extends Controller
 {
+
     public function show($community_slug, $slug)
     {
         $community = Community::where('slug', $community_slug)->first();

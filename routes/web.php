@@ -5,28 +5,24 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 use App\Http\Controllers\WishController;
 use App\Http\Controllers\CommunityController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommunityPostController;
 use App\Http\Controllers\PostCommentController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PostVoteController;
 use App\Http\Controllers\WelcomeController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+
 
 Route::get('/', [WelcomeController::class, 'welcome'])->name('Welcome');
 
 Route::get('/w/{slug}', [WishController::class, 'show'])->name('wish.show');
+<<<<<<< HEAD
+Route::get('/w/{community_slug}/posts/{post:slug}', [PostController::class, 'show'])->name('communities.posts.show');
+=======
 Route::get('/w/{community_slug}/posts/{post:slug}', [PostController::class, 'show'])->name('onewish.show');
 Route::post('/w/{community_slug}/posts/{post:slug}/comments', [PostCommentController::class, 'store'])->name('wish.comments');
+>>>>>>> 43034bf505dfdd3136d0c335d7254424a17c5986
 
 Route::group(['middleware' => ['auth', 'verified']], function(){
     Route::get('/dashboard', function () {
