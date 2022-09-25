@@ -2,9 +2,9 @@
     <guest-layout>
         <section class="flex flex-col md:flex-row m-2 p-2">
             <div class="w-full md:w-8/12">
-                <div class="m-2 p-2">
+                <div class="mx-2 p-3 bg-gray-400 rounded-md ">
                     <h2 class="font-semibold text-2xl text-black">
-                        <Link :href="route('wish.show', community.slug)">
+                        <Link class="hover:text-amber-600" :href="route('wish.show', community.slug)">
                         w/{{ community.name }}
                         </Link>
                     </h2>
@@ -19,6 +19,7 @@
                         <div>
                             Posted by
                             <span class="ml-1 text-gray-900">{{ post.data.username }}</span>
+                            {{ post.data.created_at }}
                         </div>
                         <div v-if="$page.props.auth.auth_check && post.data.owner">
                             <Link class="font-semibold bg-indigo-700 hover:bg-indigo-500 rounded-md text-white px-4 py-2" :href="route('communities.posts.edit', [community.slug, post.data.slug])">Edit</Link>
@@ -53,10 +54,10 @@
                     </div>
                 </div>
             </div>
-            <div class="w-full md:w-4/12 p-3">
-                <div class="m-2 p-2 bg-slate-600 text-white rounded-md">
-                    <h2>Latest Communities</h2>
-                </div>
+            <div class="w-full md:w-4/12">
+                <PostList :posts="posts.data" :community="community">
+                    <template #title>Popular Posts</template>
+                </PostList>
             </div>
         </section>
     </guest-layout>
@@ -65,11 +66,13 @@
 <script setup>
 import GuestLayout from '@/Layouts/GuestLayout.vue';
 import { Link, useForm, methods } from '@inertiajs/inertia-vue3';
+import PostList from '@/Components/PostList.vue';
 import PostVote from '@/Components/PostVote.vue';
 
     const props = defineProps({
         community: Object,
         post: Object,
+        posts: Object,
     });
 
     const form = useForm({

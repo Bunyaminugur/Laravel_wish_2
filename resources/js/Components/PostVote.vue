@@ -1,6 +1,6 @@
 <template>
 
-<div class="w-12 flex flex-col m-2 p-2">
+<div class="w-12 flex flex-col">
 
     <Link :href="route('posts.upVote', post.slug)" class="hover:text-amber-600" method="post" as="button" type="button"
             :class="{'text-amber-600': post.postVotes[0] && post.postVotes[0].vote == 1}" preserve-scroll>
