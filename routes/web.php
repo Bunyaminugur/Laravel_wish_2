@@ -28,10 +28,7 @@ Route::get('/w/{slug}', [WishController::class, 'show'])->name('wish.show');
 Route::get('/w/{community_slug}/posts/{post:slug}', [PostController::class, 'show'])->name('onewish.show');
 Route::post('/w/{community_slug}/posts/{post:slug}/comments', [PostCommentController::class, 'store'])->name('wish.comments');
 
-Route::group(['middleware' => ['auth', 'verified']], function(){
-    Route::get('/dashboard', function () {
-        return Inertia::render('Dashboard');
-    })->name('dashboard');
+Route::group(['middleware' => ['auth', 'verified']], function () {
 
     Route::resource('/communities', CommunityController::class);
     Route::resource('/communities.posts', CommunityPostController::class);
@@ -40,4 +37,4 @@ Route::group(['middleware' => ['auth', 'verified']], function(){
     Route::post('/posts/{post:slug}/downVote', [PostVoteController::class, 'downVote'])->name('posts.downVote');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

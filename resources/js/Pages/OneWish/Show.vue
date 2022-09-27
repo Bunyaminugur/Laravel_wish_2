@@ -33,7 +33,7 @@
                     </div>
                     <hr>
                     <div>
-                        <ul role="list" class="divide-y-[4px] divide-white text-white m-2 p-2 mt-6 bg-gray-400 rounded">
+                        <ul role="list" class="divide-y-[4px] divide-white text-white m-2 mt-6 bg-gray-400 rounded">
                             <li v-for="(comment, index) in post.data.comments" :key="index" class="py-4 flex flex-col">
                                 <div class="text-sm ml-4">Commented by <span class="font-semibold ml-1 text-amber-400">{{comment.username}}</span></div>
                                 <div class="text-white m-2 p-2">{{ comment.content }}</div>
