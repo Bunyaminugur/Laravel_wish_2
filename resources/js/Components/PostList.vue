@@ -1,12 +1,12 @@
 <template>
     <div class="w-full bg-white  shadow-md border rounded-lg">
-        <h2 class="font-semibold text-large p-4 bg-indigo-700 text-white rounded-lg">
+        <h2 class="font-semibold text-large p-4 bg-teal-800 text-white rounded-lg">
             <slot name="title" />
         </h2>
         <ul role="list" class="divide-y divide-slate-400 dark:divide-slate-700 p-4">
             <li v-for="post in posts" :key="post.id" class="py-3 sm:py-4">
                 <div class="flex items-center space-x-4">
-                    <Link :href="route('onewish.show', [community.slug, post.slug])" class="text-slate-800 hover:text-amber-600 dark:text-slate-400 font-semibold truncate text-sm">
+                    <Link :href="route('onewish.show', [community.slug, post.slug])" class="text-slate-800 hover:text-amber-500 dark:text-slate-500 font-semibold truncate text-sm">
                         {{ post.title }}
                     </Link>
                     <div>

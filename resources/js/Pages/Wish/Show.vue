@@ -1,10 +1,10 @@
 <template>
     <guest-layout>
         <template #header>
-            <div class="flex justify-between m-2 p-2">
+            <div class="flex justify-between ">
               <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 w/{{ community.name }}</h2>
-                <Link v-if="$page.props.auth.auth_check" :href="route('communities.posts.create', community.slug)" class="px-3 py-2 rounded bg-indigo-500 hover:bg-indigo-400 text-white">Create Post</Link>
+                <Link v-if="$page.props.auth.auth_check" :href="route('communities.posts.create', community.slug)" class="px-3 py-2 rounded bg-teal-800 hover:bg-teal-700 text-white">Create Post</Link>
             </div>
         </template>
         <section class="flex md:flex-row m-2 p-2">
@@ -16,7 +16,7 @@
             </div>
             <div class="w-4/12 p-3">
                 <div>
-                    <h2 class="font-semibold text-lg p-5 bg-indigo-700 rounded-t-lg text-white">
+                    <h2 class="font-semibold text-lg p-5 bg-teal-800 rounded-t-lg text-white">
                         About {{ community.name }}
                     </h2>
                     <p class="bg-white p-4 rounder-b-lg">

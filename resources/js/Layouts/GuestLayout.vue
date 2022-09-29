@@ -12,8 +12,8 @@ const showingNavigationDropdown = ref(false);
 <template>
     <div>
         </div>
-        <div class="min-h-screen bg-slate-300">
-            <nav class="bg-white border-b border-gray-100">
+        <div class="min-h-screen bg-teal-100">
+            <nav class="bg-teal-500  border-gray-100">
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16">
@@ -53,8 +53,8 @@ const showingNavigationDropdown = ref(false);
                                 </Dropdown>
                             </div>
                             <template v-else>
-                                <Link :href="route('login')" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</Link>
-                                <Link :href="route('register')" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</Link>
+                                <Link :href="route('login')" class="text-sm text-white underline">Log in</Link>
+                                <Link :href="route('register')" class="ml-4 text-sm text-white underline">Register</Link>
                             </template>
                         </div>
 
@@ -81,7 +81,7 @@ const showingNavigationDropdown = ref(false);
             </nav>
 
             <!-- Page Heading -->
-            <header class="bg-white shadow" v-if="$slots.header">
+            <header class="bg-teal-300  shadow" v-if="$slots.header">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                     <slot name="header" />
                 </div>

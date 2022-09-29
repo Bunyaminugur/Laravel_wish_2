@@ -9,7 +9,7 @@
             mr-1
             px-4
             py-3
-            text-gray-400 text-sm
+            text-black text-sm
             leading-4
             border
             rounded
@@ -28,10 +28,10 @@
             leading-4
             border
             rounded
-            hover:bg-white
-            focus:text-indigo-500 focus:border-indigo-500
+            hover:bg-teal-500
+            focus:text-teal-600 focus:border-teal-600
           "
-          :class="{ 'bg-indigo-300': link.active }"
+          :class="{ 'bg-teal-600': link.active }"
         ></Link>
       </template>
     </div>

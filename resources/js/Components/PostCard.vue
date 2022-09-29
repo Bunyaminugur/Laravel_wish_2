@@ -7,7 +7,7 @@
         flex
         bg-white
         rounded-lg
-        border border-gray-200
+        border border-y-200
         shadow-md
       ">
       <div class="mr-3">
@@ -15,7 +15,7 @@
       </div>
       <div>
         <div class="flex my-2 py-2 text-sm">
-          <Link :href="route('wish.show', community)" class="font-semibold mr-3 hover:text-amber-600">w/{{ community }}</Link>
+          <Link :href="route('wish.show', community)" class="font-semibold mr-3 hover:text-amber-500">w/{{ community }}</Link>
           <div class="flex">
             Posted by
             <span class="font-semibold mx-1">{{ post.username }}</span>
@@ -29,25 +29,34 @@
               text-2xl
               font-bold
               tracking-tight
-              text-gray-700
-              dark:text-gray
-              hover:text-amber-600
+              text-y-700
+              dark:text-y
+              hover:text-amber-500
             "
           >
             {{ post.title }}
           </h5>
         </Link>
-        <p class="mb-3 font-normal text-gray-900 dark:text-gray-800">
+        <p class="mb-3 font-normal text-y-900 dark:text-y-800">
           {{ post.description }}
         </p>
         <div class="flex m-2 p-2">
-          <p class="mr-4 p-2">Comments({{ post.comments_count }})</p>
+          <Link  :href="route('onewish.show', [community, post.slug])"
+              class="flex
+              items-center mx-2
+              py-2
+              px-3
+              text-sm
+              font-medium
+              text-center text-white
+              bg-teal-800
+              rounded-lg
+              hover:bg-teal-800
+              focus:ring-4 focus:outline-none focus:bg-teal-800
+              dark:bg-teal-800 dark:hover:bg-teal-500 dark:focus:bg-grteal-500
+            ">Comments({{ post.comments_count }})</Link>
           <Link
-<<<<<<< HEAD
-            :href="route('communities.posts.show', [community, post.slug])" 
-=======
             :href="route('onewish.show', [community, post.slug])"
->>>>>>> 43034bf505dfdd3136d0c335d7254424a17c5986
             class="
               inline-flex
               items-center
@@ -56,11 +65,11 @@
               text-sm
               font-medium
               text-center text-white
-              bg-blue-700
+              bg-teal-800
               rounded-lg
-              hover:bg-blue-800
-              focus:ring-4 focus:outline-none focus:ring-blue-300
-              dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800
+              hover:bg-teal-800
+              focus:ring-4 focus:outline-none focus:bg-teal-800
+              dark:bg-teal-800 dark:hover:bg-teal-500 dark:focus:bg-teal-500
             ">
             Read more
             <svg
@@ -82,12 +91,8 @@
     </div>
   </template>
 <script setup>
-<<<<<<< HEAD
-import { Link } from "@inertiajs/inertia-vue3"
-=======
 import { Link } from "@inertiajs/inertia-vue3";
 import PostVote from "./PostVote.vue";
->>>>>>> 43034bf505dfdd3136d0c335d7254424a17c5986
   defineProps({
     post: Object,
     community: String,
