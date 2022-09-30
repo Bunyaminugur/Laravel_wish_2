@@ -11,7 +11,7 @@
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="max-w-md mx-auto rounded-xl bg-slate-300 m-2 p-10 ">
+                <div class="max-w-md mx-auto rounded-xl bg-teal-500 m-2 p-10 ">
                     <form @submit.prevent="submit">
 
                   <div>
